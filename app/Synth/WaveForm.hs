@@ -1,6 +1,9 @@
 module Synth.WaveForm where
 
 import Synth.Types
+import System.Random
+import Text.Printf (vFmt)
+import GHC.Float (castDoubleToWord64)
 
 sinWave :: WaveForm
 sinWave = sin
@@ -15,4 +18,9 @@ triangleWave :: WaveForm
 triangleWave t = 2 * abs (2 * (t - fromIntegral (floor (t + 1/2)))) - 1
 
 noiseWave :: WaveForm
-noiseWave t = undefined
+noiseWave t = fst (randomFloat t)
+
+-- The seed is currently based on t, which is probably very bad but it kind of works!
+randomFloat :: Float -> (Float, StdGen)
+randomFloat t = randomR (-1.0 :: Float, 1.0 :: Float) gen
+                where gen = mkStdGen (round ((t * t) / 67))
