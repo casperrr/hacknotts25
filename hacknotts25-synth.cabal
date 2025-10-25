@@ -1,0 +1,21 @@
+cabal-version:      3.0
+name:               hacknotts25-synth
+version:            0.1.0.0
+synopsis:           Simple synthesiser written from scratch
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             casperrr
+maintainer:         casper.sebastien@gmail.com
+category:           Sound
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+executable hacknotts25-synth
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.18.3.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
