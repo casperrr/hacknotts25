@@ -19,7 +19,7 @@ clamp :: Sample -> Sample
 clamp x = max (-1.0) (min 1.0 x)
 
 floatToInt16 :: Float -> Int16
-floatToInt16 s = round $ clamp $ s * 32767.0
+floatToInt16 s = round (clamp s * 32767.0)
 
 ----- Writing to WAV files -----
 
