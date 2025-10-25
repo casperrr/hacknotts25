@@ -19,8 +19,12 @@ executable hacknotts25-synth
                       Synth.Oscillator
                       Synth.Util
                       Synth.WaveForm
+                      Synth.Envelope
+                      Synth.Instrument
                       Music.Constants
                       Music.Types
+                      Music.Render
+                      Music.MIDI
     -- other-extensions:
     build-depends:    base ^>=4.18.3.0,
                       bytestring,
