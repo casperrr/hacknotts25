@@ -11,4 +11,3 @@ data Music = Note Pitch Beats Velocity
            | Seq Music Music -- notes one after another 
            | Par Music Music -- notes simultaniously
            deriving (Show, Eq)
-
