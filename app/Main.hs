@@ -61,12 +61,12 @@ main = do
     saveWav "composition.wav" audio3
     putStrLn "✓ Saved to composition.wav\n"
     
-    -- Example 4: Parse MIDI file if it exists (requires MIDI packages)
-    -- putStrLn "Attempting to parse MIDI file..."
-    -- midiMusic <- parseMIDI "dohotgirlslikechordsguitarsolo.mid"
-    -- let audio4 = render piano midiMusic
-    -- saveWav "midi-output.wav" audio4
-    -- putStrLn "✓ Parsed MIDI and saved to midi-output.wav\n"
+    -- Example 4: Parse MIDI file
+    putStrLn "Parsing MIDI file..."
+    midiMusic <- parseMIDI "dohotgirlslikechordsguitarsolo.mid"
+    let audio4 = render piano midiMusic
+    saveWav "midi-output.wav" audio4
+    putStrLn "✓ Parsed MIDI and saved to midi-output.wav\n"
     
     putStrLn "All done! 🎵"
 
