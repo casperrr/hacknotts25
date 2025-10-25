@@ -1,5 +1,9 @@
 module Synth.Util where
 
+import Data.ByteString.Builder ( floatLE, toLazyByteString )
+import Data.ByteString.Lazy (writeFile)
+import Prelude hiding (writeFile)
+
 import Synth.Types
 import Data.Int ( Int16 )
 
@@ -17,3 +21,10 @@ floatToInt16 s = round $ clamp $ s * 32767.0
 
 ----- Writing to WAV files -----
 
+-- First write raw bin to .bin file
+
+saveRaw :: FilePath -> Audio -> IO ()
+saveRaw path audio = writeFile path $ toLazyByteString $ foldMap floatLE audio
+
+-- to play audio run:
+-- ffplay -showmode 1 -f f32le -ar sampleRate "output.bin
