@@ -2,8 +2,6 @@ module Synth.WaveForm where
 
 import Synth.Types
 import System.Random
-import Text.Printf (vFmt)
-import GHC.Float (castDoubleToWord64)
 
 sinWave :: WaveForm
 sinWave = sin
