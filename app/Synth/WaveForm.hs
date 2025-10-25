@@ -43,5 +43,5 @@ clarinetWave = makeHarmonicWave [(1, 1.0), (3, 0.3), (5, 0.1), (7, 0.05)]
 pianoWave :: WaveForm
 pianoWave = makeHarmonicWave [(1, 1.0), (2, 0.7), (3, 0.4), (4, 0.3), (5, 0.15), (6, 0.1)]
 
-guitarWave :: WaveForm-- Used to make sine waves in the expression Amplitude * sin(Frequency * t) (i.e. A*sin(w * t)
+guitarWave :: WaveForm
 guitarWave = makeHarmonicWave [(1, 1.0), (2, 0.8), (3, 0.4), (4, 0.2), (5, 0.1)]
